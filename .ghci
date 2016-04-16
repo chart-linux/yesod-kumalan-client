@@ -16,3 +16,5 @@
 :set -XTupleSections
 :set -XTypeFamilies
 :set -XViewPatterns
+:set -XScopedTypeVariables
+:set prompt "λ > "
