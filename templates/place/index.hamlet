@@ -15,5 +15,5 @@
         <td>
           <a href=@?{(UsersR, [("place_id", (pack $ show placeid))])} .btn .btn-default >ユーザー一覧
         <td .text-right>
-          <a .btn .btn-success data-method=put>編集
-          <a .btn .btn-danger data-confirm=本当によろしいですか？ rel=nofollow>削除
+          <a href=@{PlaceEditR placeid} .btn .btn-success>編集
+          <a href=@{PlaceDeleteR placeid} .btn .btn-danger data-confirm=本当によろしいですか？ rel=nofollow>削除

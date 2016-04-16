@@ -1,4 +1,7 @@
-<h2 .page-header>#{userName user}のデバイス
+<h2 .page-header>
+  <a href=@?{(UsersR, [("place_id", pack $ show (userPlaceId user))])} .btn .btn-info .glyphicon .glyphicon-arrow-left>戻る
+  #{userName user}のデバイス
+  <a href=@{DeviceCreateR} .btn .btn-primary>デバイスを登録
 <table .table .table-striped>
   <thread>
     <tr>

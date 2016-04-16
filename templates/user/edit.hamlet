@@ -1,1 +1,3 @@
-^{form formWidget formEnctype}
+<h2 .page-header>ユーザーの情報を編集する
+<form role=form method=post action=@{UserEditR userId} enctype=#{formEnctype} .form-horizontal>
+  ^{formWidget}

@@ -22,16 +22,17 @@ postPlaceCreateR = do
     _ -> defaultLayout $(widgetFile "place/create")
 
 getPlaceEditR :: PlaceId -> Handler Html
-getPlaceEditR placeId = error "Not yet implemented: putPlaceR"
+getPlaceEditR placeId = error "Not yet implemented: getPlaceEditR"
 
 postPlaceEditR :: PlaceId -> Handler Html
-postPlaceEditR placeId = error "Not yet implemented: putPlaceR"
+postPlaceEditR placeId = error "Not yet implemented: postPlaceEditR"
 
 getPlaceDeleteR :: PlaceId -> Handler Html
-getPlaceDeleteR placeId = error "Not yet implemented: deletePlaceR"
+getPlaceDeleteR placeId = do
+  place <- runDB $ get404 placeId
+  _ <- runDB $ delete placeId
+  redirect HomeR
 
 placeForm :: Html -> MForm Handler (FormResult Place, Widget)
 placeForm = renderBootstrap3 BootstrapBasicForm $ Place
   <$> areq textField (bfs ("名前" :: Text)) Nothing
-
-form formWidget formEnctype = $(widgetFile "place/_form")

@@ -45,6 +45,9 @@ $newline never
   <body>
     <div .container>
       <header>
+        <div .navbar .navbar-default .navbar-static-top>
+          <div .container>
+            <a href=@{HomeR} .navbar-brand>Top
       <div .row>
         ^{pageBody pc}
       <footer>

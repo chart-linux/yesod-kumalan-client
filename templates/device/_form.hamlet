@@ -1,3 +1,0 @@
-<h2 .page-header>デバイスを登録する
-<form role=form method=post action=@{DeviceCreateR} enctype=#{formEnctype} .form-horizontal>
-  ^{formWidget}

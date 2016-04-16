@@ -40,5 +40,3 @@ deviceForm userIdMaybe users = renderBootstrap3 (BootstrapHorizontalForm (ColSm 
   <$> areq (selectFieldList [(userName user, userid) | Entity userid user <- users ]) (bfs ("持ち主" :: Text)) userIdMaybe
   <*> areq textField (bfs ("MACアドレス" :: Text)) Nothing
   <*  bootstrapSubmit (BootstrapSubmit ("登録" :: Text) "btn-primary" [("attribute-name","attribute-value")])
-
-form formWidget formEnctype = $(widgetFile "device/_form")

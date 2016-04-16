@@ -25,6 +25,7 @@ library
                      Handler.Place
                      Handler.User
                      Handler.Device
+                     Handler.UserPay
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT

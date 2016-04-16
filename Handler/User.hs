@@ -64,5 +64,3 @@ updateUserForm user placeIdMaybe places = renderBootstrap3 (BootstrapHorizontalF
 
 userForm :: Maybe PlaceId -> [Entity Place] -> Html -> MForm Handler (FormResult User, Widget)
 userForm = updateUserForm Nothing
-
-form formWidget formEnctype = $(widgetFile "user/_form")

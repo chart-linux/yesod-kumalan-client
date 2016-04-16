@@ -1,1 +1,3 @@
-^{form formWidget formEnctype}
+<h2 .page-header>ユーザーを登録する
+<form role=form method=post action=@{UserCreateR} enctype=#{formEnctype} .form-horizontal>
+  ^{formWidget}

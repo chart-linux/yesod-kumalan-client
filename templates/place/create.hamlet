@@ -1,1 +1,4 @@
-^{form formWidget formEnctype}
+<h2 .page-header>部屋を登録する
+<form role=form method=post action=@{PlaceCreateR} enctype=#{formEnctype}>
+  ^{formWidget}
+  <button type="submit" .btn .btn-primary>登録

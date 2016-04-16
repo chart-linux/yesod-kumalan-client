@@ -1,4 +1,5 @@
 <h2 .page-header>
+  <a href=@{PlacesR} .btn .btn-info .glyphicon .glyphicon-arrow-left>戻る
   #{placeName place}のユーザー
   <a href=@?{(UserCreateR, [("place_id", pack $ show placeId)])} .btn .btn-primary>ユーザーを登録
 <table .table .table-striped>
@@ -27,5 +28,6 @@
         <td>
           <a href=@?{(DevicesR, [("user_id", (pack $ show userid))])} .btn .btn-default>デバイス一覧
         <td .text-right>
+          <a href=@?{(UserPayR userid, [("paid", "True")])} .btn .btn-warning>支払い
           <a href=@{UserEditR userid} .btn .btn-success>編集
           <a href=@{UserDeleteR userid} .btn .btn-danger data-confirm=本当によろしいですか？ rel=nofollow>削除
