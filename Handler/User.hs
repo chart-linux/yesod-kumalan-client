@@ -45,7 +45,7 @@ postUserEditR userId = do
     FormSuccess user -> do
       _ <- runDB $ get404 userId
       _ <- runDB $ repsert userId user
-      redirect UsersR
+      redirect (UsersR, [("place_id", pack . show $ userPlaceId user)])
     _ -> defaultLayout $(widgetFile "user/edit")
 
 getUserDeleteR :: UserId -> Handler Html

@@ -21,11 +21,12 @@ getDeviceCreateR = do
 
 postDeviceCreateR :: Handler Html
 postDeviceCreateR = do
-  ((result, formWidget), formEnctype) <- runFormPost $ deviceForm Nothing []
+  users <- runDB $ selectList [] []
+  ((result, formWidget), formEnctype) <- runFormPost $ deviceForm Nothing users
   case result of
     FormSuccess device -> do
       _ <- runDB $ insert device
-      redirect (DeviceCreateR, [("user_id", pack . show . deviceUserId $ device)])
+      redirect (DevicesR, [("user_id", pack . show . deviceUserId $ device)])
     _ -> defaultLayout $(widgetFile "device/create")
 
 getDeviceDeleteR :: DeviceId -> Handler Html
