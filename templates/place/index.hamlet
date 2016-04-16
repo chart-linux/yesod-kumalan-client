@@ -1,0 +1,19 @@
+<h2 .page-header>
+  部屋一覧
+  <a href=@{PlaceCreateR} .btn .btn-primary>部屋を登録
+<table .table .table-striped>
+  <thread>
+    <tr>
+      <th>部屋番号
+      <th>
+      <th>
+  <tbody>
+    $forall Entity placeid place <- places
+      <tr>
+        <td>
+          #{placeName place}
+        <td>
+          <a href=@?{(UsersR, [("place_id", (pack $ show placeid))])} .btn .btn-default >ユーザー一覧
+        <td .text-right>
+          <a .btn .btn-success data-method=put>編集
+          <a .btn .btn-danger data-confirm=本当によろしいですか？ rel=nofollow>削除

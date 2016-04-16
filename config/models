@@ -1,0 +1,13 @@
+Place
+  name Text
+  deriving Show
+User
+  placeId PlaceId
+  name Text
+  exempted Bool
+  paid Bool
+  deriving Show
+Device
+  userId UserId
+  macAddress Text
+  deriving Show

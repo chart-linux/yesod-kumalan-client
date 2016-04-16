@@ -1,0 +1,13 @@
+<h2 .page-header>#{userName user}のデバイス
+<table .table .table-striped>
+  <thread>
+    <tr>
+      <th>MACアドレス
+      <th .text-right>
+  <tbody>
+    $forall Entity deviceid device <- devices
+      <tr>
+        <td>
+          <b>#{deviceMacAddress device}
+        <td .text-right>
+          <a href=@{DeviceDeleteR deviceid} .btn .btn-danger data-confirm=本当によろしいですか？ rel=nofollow>削除
