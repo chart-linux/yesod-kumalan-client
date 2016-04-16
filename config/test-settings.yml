@@ -1,9 +1,9 @@
 database:
-  # NOTE: By design, this setting prevents the SQLITE_DATABASE environment variable
+  # NOTE: By design, this setting prevents the PGDATABASE environment variable
   # from affecting test runs, so that we don't accidentally affect the
   # production database during testing. If you're not concerned about that and
   # would like to have environment variable overrides, you could instead use
   # something like:
   #
-  #   database: "_env:SQLITE_DATABASE:yesod-kumalan_test.sqlite3"
-  database: yesod-kumalan_test.sqlite3
+  #   database: "_env:PGDATABASE:yesod-kumalan_LOWER_test"
+  database: yesod-kumalan_LOWER_test
