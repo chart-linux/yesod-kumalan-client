@@ -1,22 +1,22 @@
-/static StaticR Static appStatic
-/favicon.ico FaviconR GET
-/robots.txt RobotsR GET
+/kumalan/static StaticR Static appStatic
+/kumalan/favicon.ico FaviconR GET
+/kumalan/robots.txt RobotsR GET
 
-/                        HomeR         GET
+/kumalan/                        HomeR         GET
 
-/places                  PlacesR       GET
-/place/create            PlaceCreateR  GET POST
-/place/#PlaceId/edit     PlaceEditR    GET POST
-/place/#PlaceId/delete   PlaceDeleteR  GET
+/kumalan/places                  PlacesR       GET
+/kumalan/place/create            PlaceCreateR  GET POST
+/kumalan/place/#PlaceId/edit     PlaceEditR    GET POST
+/kumalan/place/#PlaceId/delete   PlaceDeleteR  GET
 
-/users                   UsersR        GET
-/user/create             UserCreateR   GET POST
-/user/#UserId/edit       UserEditR     GET POST
-/user/#UserId/delete     UserDeleteR   GET
+/kumalan/users                   UsersR        GET
+/kumalan/user/create             UserCreateR   GET POST
+/kumalan/user/#UserId/edit       UserEditR     GET POST
+/kumalan/user/#UserId/delete     UserDeleteR   GET
 
-/devices                 DevicesR      GET
-/device/create           DeviceCreateR GET POST
-/device/#DeviceId/delete DeviceDeleteR GET
-/user/#UserId/pay UserPayR GET
+/kumalan/devices                 DevicesR      GET
+/kumalan/device/create           DeviceCreateR GET POST
+/kumalan/device/#DeviceId/delete DeviceDeleteR GET
+/kumalan/user/#UserId/pay        UserPayR      GET
 
-/firewall FirewallR GET
+/kumalan/firewall                FirewallR     GET
