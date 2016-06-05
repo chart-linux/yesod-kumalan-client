@@ -45,9 +45,14 @@ $newline never
   <body>
     <div .container>
       <header>
-        <div .navbar .navbar-default .navbar-static-top>
-          <div .container>
+        <div .navbar .navbar-default>
+          <div .navbar-header>
             <a href=@{HomeR} .navbar-brand>Top
+          <ul .nav .navbar-nav .navbar-right>
+            <li>
+              <a href=@{FirewallR}>フィルタ更新
+            <li>
+              <div style='width:50px'>
       <div .row>
         ^{pageBody pc}
       <footer>
