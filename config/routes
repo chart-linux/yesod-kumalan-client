@@ -18,3 +18,5 @@
 /device/create           DeviceCreateR GET POST
 /device/#DeviceId/delete DeviceDeleteR GET
 /user/#UserId/pay UserPayR GET
+
+/firewall FirewallR GET

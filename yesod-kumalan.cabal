@@ -26,6 +26,7 @@ library
                      Handler.User
                      Handler.Device
                      Handler.UserPay
+                     Handler.Firewall
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
@@ -88,6 +89,8 @@ library
                  , time
                  , case-insensitive
                  , wai
+                 , process
+                 , temporary
 
 executable         yesod-kumalan
     if flag(library-only)
