@@ -4,6 +4,8 @@ import Import hiding (writeFile)
 import System.IO
 import System.Process
 
+sshTarget = "root@kumalan.mydns.jp"
+
 getFirewallR :: Handler Html
 getFirewallR = do
   users <- runDB $ selectList ([ UserPaid ==. True ] ||. [ UserExempted ==. True ]) []
@@ -16,6 +18,6 @@ getFirewallR = do
       return ("iptables -A forwarding_lan_rule -m mac --mac-source " ++ mac ++ " -j ACCEPT")
     let script = accepts ++ ["iptables -A forwarding_lan_rule -j REJECT"]
     writeFile "/tmp/firewall.user" (unlines script)
-    callProcess "/usr/bin/scp" ["-o", "StrictHostKeyChecking=no", "-o","UserKnownHostsFile=/dev/null", "/tmp/firewall.user", "root@kumalan.dip.jp:/etc/firewall.user"]
-    callProcess "/usr/bin/ssh" ["-o", "StrictHostKeyChecking=no", "-o", "UserKnownHostsFile=/dev/null", "root@kumalan.dip.jp", "/etc/init.d/firewall", "restart"]
+    callProcess "/usr/bin/scp" ["-o", "StrictHostKeyChecking=no", "-o","UserKnownHostsFile=/dev/null", "/tmp/firewall.user", sshTarget ++ ":/etc/firewall.user"]
+    callProcess "/usr/bin/ssh" ["-o", "StrictHostKeyChecking=no", "-o", "UserKnownHostsFile=/dev/null", sshTarget, "/etc/init.d/firewall", "restart"]
   redirect HomeR
